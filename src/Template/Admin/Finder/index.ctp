@@ -13,9 +13,9 @@
 
 <div class="elfinder"><?php echo __d('wysiwyg', 'Please enable JavaScript to use elFinder plugin.'); ?></div>
 
-<?php $this->Html->css('Wysiwyg./elfinder/css/elfinder.min.css', ['block' => true]); ?>
-<?php $this->Html->css('Wysiwyg./elfinder/css/theme.css', ['block' => true]); ?>
-<?php $this->Html->script('Wysiwyg./elfinder/js/elfinder.min.js', ['block' => true]); ?>
+<?php $this->Html->css('MediaManager.elfinder.min.css', ['block' => true]); ?>
+<?php $this->Html->css('MediaManager.theme.css', ['block' => true]); ?>
+<?php $this->Html->script('MediaManager.elfinder.min.js', ['block' => true]); ?>
 <?php $this->jQuery->theme(['block' => true]); ?>
 <?php $this->jQuery->ui(['block' => true]); ?>
 
@@ -53,7 +53,7 @@
         var beeper = $(document.createElement('audio')).hide().appendTo('body')[0];
 
         $('div.elfinder').elfinder({
-            url : '<?php echo $this->Url->build(['plugin' => 'Wysiwyg', 'controller' => 'finder', 'action' => 'connector', 'prefix' => 'admin']); ?>',
+            url : '<?php echo $this->Url->build(['plugin' => 'MediaManager', 'controller' => 'explorer', 'action' => 'connector', 'prefix' => 'admin']); ?>',
             dateFormat: '<?php echo __d('wysiwyg', 'M d, Y h:i A'); ?>',
             fancyDateFormat: '<?php echo __d('wysiwyg', '$1 H:m:i'); ?>',
             lang: 'en',
@@ -72,7 +72,7 @@
         .bind('rm', function(e) {
             e.stopPropagation();
             var play  = beeper.canPlayType && beeper.canPlayType('audio/wav; codecs="1"');
-            play && play != '' && play != 'no' && $(beeper).html('<source src="<?php echo $this->Url->build('/Wysiwyg/js/elfinder/sounds/rm.wav'); ?>" type="audio/wav">')[0].play()
+            play && play != '' && play != 'no' && $(beeper).html('<source src="<?php echo $this->Url->build('/MediaManager/sounds/rm.wav'); ?>" type="audio/wav">')[0].play()
         });
     });
 </script>

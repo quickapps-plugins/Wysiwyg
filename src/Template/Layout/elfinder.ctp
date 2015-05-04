@@ -16,7 +16,7 @@
     <head>
         <title>elFinder 2.0</title>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-        <?php echo $this->Html->head(['bootstrap' => false]); ?>
+        <?php echo $this->Html->head(['bootstrap' => true]); ?>
     </head>
 
     <body>
