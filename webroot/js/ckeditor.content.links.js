@@ -3,26 +3,26 @@ CKEDITOR.on('dialogDefinition', function(ev) {
 
 	if (dialogName == 'link') {
 		var dialogDefinition = ev.data.definition;
-		var infoTab = dialogDefinition.getContents( 'info' );
+		var infoTab = dialogDefinition.getContents('info');
 		infoTab.add({
 			type : 'vbox',
 			id : 'localPageOptions',
 			children: [{
 				type: 'select',
-				label: linksToNodesLabel,
+				label: linksToContentsLabel,
 				id: 'localPage',
-				title: linksToNodesLabel,
-				items: linksToNodesItems,
+				title: linksToContentsLabel,
+				items: linksToContentsItems,
 				onChange : function(ev) {
 					var diag = CKEDITOR.dialog.getCurrent();
-					var url = diag.getContentElement('info','url');
+					var url = diag.getContentElement('info', 'url');
 					url.setValue(ev.data.value);
 				}
 			}]
 		});
 
 		dialogDefinition.onFocus = function() {
-			var urlField = this.getContentElement( 'info', 'url' );
+			var urlField = this.getContentElement('info', 'url');
 			urlField.select();
 		};
 	}
